@@ -82,19 +82,22 @@
     });
   });
 
-  gsap.utils.toArray('.case-card').forEach((card, i) => {
-    gsap.from(card, {
-      scrollTrigger: {
-        trigger: card,
-        start: 'top 88%',
-      },
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      delay: i * 0.12,
-      ease: 'power3.out',
+  window.animateCaseCards = function () {
+    gsap.utils.toArray('#casesGrid .case-card').forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 88%',
+        },
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        delay: i * 0.12,
+        ease: 'power3.out',
+      });
     });
-  });
+    ScrollTrigger.refresh();
+  };
 
   gsap.to('.hero__glow--cyan', {
     x: 30,

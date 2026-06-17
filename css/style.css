@@ -675,6 +675,13 @@ button, input, textarea {
   margin-top: 3rem;
 }
 
+.cases__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem;
+}
+
 .case-card {
   position: relative;
   border-radius: var(--radius-md);
@@ -698,6 +705,7 @@ button, input, textarea {
 .case-card__image {
   aspect-ratio: 16/10;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   position: relative;
   overflow: hidden;
@@ -706,6 +714,16 @@ button, input, textarea {
 .case-card--featured .case-card__image {
   aspect-ratio: auto;
   min-height: 320px;
+}
+
+.case-card__image--screenshot {
+  min-height: 380px;
+  background-position: top center;
+  background-size: cover;
+}
+
+.case-card--featured .case-card__image--screenshot::after {
+  background: linear-gradient(to right, transparent 40%, rgba(15, 23, 42, 0.15) 100%);
 }
 
 .case-card__image::after {

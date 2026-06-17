@@ -1,0 +1,34 @@
+window.PROJECTS_DATA = [
+  {
+    id: 'confectioner',
+    title: 'Сайт домашнего кондитера',
+    description: 'Разработка сайта для презентации продукции и личного бренда домашнего кондитера.',
+    tools: ['HTML5', 'CSS3', 'JavaScript', 'Figma'],
+    featured: true,
+    image: 'data/сайт кондитера.png',
+  },
+  {
+    id: 'wildberries',
+    title: 'Карточки Wildberries',
+    description: 'Создание визуально привлекательных карточек товаров для маркетплейса.',
+    tools: ['Photoshop', 'Illustrator'],
+    featured: false,
+    image: 'data/карточки6.jpg',
+  },
+  {
+    id: 'vk-community',
+    title: 'Оформление сообщества ВК',
+    description: 'Разработка единого визуального стиля сообщества: обложки, баннеры, посты.',
+    tools: ['Photoshop', 'Illustrator'],
+    featured: false,
+    image: 'data/ОБЛ.jpg',
+  },
+  {
+    id: 'digital-card',
+    title: 'Электронная визитка',
+    description: 'Персональная цифровая страница специалиста с контактами и портфолио.',
+    tools: ['HTML5', 'CSS3', 'Figma'],
+    featured: false,
+    gradient: 'linear-gradient(135deg, #f472b6 0%, #c084fc 100%)',
+  },
+];
