@@ -255,6 +255,20 @@ button, input, textarea {
   width: 100%;
 }
 
+.btn:focus-visible,
+.nav__link:focus-visible,
+.contact__link:focus-visible,
+.case-card__link:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+.form__group input:focus-visible,
+.form__group textarea:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 0;
+}
+
 /* ===== Hero ===== */
 .hero {
   position: relative;
@@ -1067,6 +1081,27 @@ button, input, textarea {
 .reveal-left,
 .reveal-right {
   will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .hero__shape-inner {
+    will-change: auto;
+  }
+
+  .hero__scroll-line {
+    animation: none;
+  }
+
+  .about__photo-ring {
+    animation: none;
+  }
 }
 
 /* ===== Responsive ===== */
