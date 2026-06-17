@@ -49,10 +49,33 @@
 
   const heroTimeline = gsap.timeline({ defaults: { ease: 'power3.out' } });
   heroTimeline
-    .from('.hero__tag', { y: 30, opacity: 0, duration: 0.7 })
-    .from('.hero__title', { y: 40, opacity: 0, duration: 0.9 }, '-=0.4')
-    .from('.hero__subtitle', { y: 30, opacity: 0, duration: 0.8 }, '-=0.5')
-    .from('.hero__actions', { y: 20, opacity: 0, duration: 0.7 }, '-=0.4');
+    .from('.hero__badge', { y: 30, opacity: 0, duration: 1 }, 0.5)
+    .from('.hero__title', { y: 40, opacity: 0, duration: 0.9 }, 0.7)
+    .from('.hero__subtitle', { y: 30, opacity: 0, duration: 0.8 }, 1.0)
+    .from('.hero__actions', { y: 20, opacity: 0, duration: 0.7 }, 1.2);
+
+  gsap.utils.toArray('.hero__shape').forEach((shape, i) => {
+    const inner = shape.querySelector('.hero__shape-inner');
+
+    gsap.from(shape, {
+      opacity: 0,
+      y: -120,
+      duration: 2.2,
+      delay: 0.3 + i * 0.15,
+      ease: 'power3.out',
+    });
+
+    if (inner) {
+      gsap.to(inner, {
+        y: 15,
+        duration: 6 + i,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 1 + i * 0.4,
+      });
+    }
+  });
 
   gsap.utils.toArray('.service-card').forEach((card, i) => {
     gsap.from(card, {
@@ -99,18 +122,8 @@
     ScrollTrigger.refresh();
   };
 
-  gsap.to('.hero__glow--cyan', {
-    x: 30,
-    y: -20,
-    duration: 6,
-    repeat: -1,
-    yoyo: true,
-    ease: 'sine.inOut',
-  });
-
-  gsap.to('.hero__glow--violet', {
-    x: -20,
-    y: 30,
+  gsap.to('.hero__bg-gradient', {
+    opacity: 0.85,
     duration: 8,
     repeat: -1,
     yoyo: true,

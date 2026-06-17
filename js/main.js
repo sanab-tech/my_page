@@ -93,9 +93,10 @@
             ? ` role="img" aria-label="${project.title}"`
             : ' aria-hidden="true"';
 
-          const imageClass = project.featured && project.image
-            ? ' case-card__image--screenshot'
-            : '';
+          const imageClass = [
+            project.featured && project.image ? ' case-card__image--screenshot' : '',
+            project.imageFit === 'contain' ? ' case-card__image--banner' : '',
+          ].join('');
 
           return `
             <article class="case-card${featuredClass}">

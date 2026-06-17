@@ -3,7 +3,7 @@
     "id": "confectioner",
     "title": "Сайт домашнего кондитера",
     "description": "Разработка сайта для презентации продукции и личного бренда домашнего кондитера.",
-    "tools": ["HTML5", "CSS3", "JavaScript", "Figma"],
+    "tools": ["HTML5", "CSS3", "JavaScript"],
     "featured": true,
     "image": "data/сайт кондитера.png"
   },
@@ -21,13 +21,14 @@
     "description": "Разработка единого визуального стиля сообщества: обложки, баннеры, посты.",
     "tools": ["Photoshop", "Illustrator"],
     "featured": false,
-    "image": "data/ОБЛ.jpg"
+    "image": "data/ОБЛ.jpg",
+    "imageFit": "contain"
   },
   {
     "id": "digital-card",
     "title": "Электронная визитка",
     "description": "Персональная цифровая страница специалиста с контактами и портфолио.",
-    "tools": ["HTML5", "CSS3", "Figma"],
+    "tools": ["HTML5", "CSS3"],
     "featured": false,
     "gradient": "linear-gradient(135deg, #f472b6 0%, #c084fc 100%)"
   }
