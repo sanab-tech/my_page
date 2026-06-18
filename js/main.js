@@ -106,22 +106,25 @@
           .map((t) => `<span class="case-card__tool">${escapeHtml(t)}</span>`)
           .join('');
 
-        const imageStyle = project.image
-          ? `background-image: url('${encodePath(project.image)}')`
-          : `background-image: ${project.gradient || 'none'}`;
-
-        const imageAlt = project.image
-          ? ` role="img" aria-label="${escapeHtml(project.title)}"`
-          : ' aria-hidden="true"';
-
         const imageClass = [
           project.featured && project.image ? ' case-card__image--screenshot' : '',
           project.imageFit === 'contain' ? ' case-card__image--banner' : '',
+          !project.image && project.gradient ? ' case-card__image--gradient' : '',
         ].join('');
+
+        const imageContent = project.image
+          ? `<img src="${encodePath(project.image)}" alt="${escapeHtml(project.title)}" loading="lazy" width="800" height="500">`
+          : '';
+
+        const imageStyle = !project.image && project.gradient
+          ? ` style="background-image: ${project.gradient}"`
+          : '';
+
+        const imageAria = !project.image ? ' aria-hidden="true"' : '';
 
         return `
           <article class="case-card${featuredClass}">
-            <div class="case-card__image${imageClass}"${imageAlt} style="${imageStyle}"></div>
+            <div class="case-card__image${imageClass}"${imageAria}${imageStyle}>${imageContent}</div>
             <div class="case-card__body">
               <h3>${escapeHtml(project.title)}</h3>
               <p>${escapeHtml(project.description)}</p>

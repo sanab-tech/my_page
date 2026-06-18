@@ -30,6 +30,6 @@
     "description": "Персональная цифровая страница специалиста с контактами и портфолио.",
     "tools": ["HTML5", "CSS3"],
     "featured": false,
-    "gradient": "linear-gradient(135deg, #f472b6 0%, #c084fc 100%)"
+    "gradient": "linear-gradient(135deg, #78B4B7 0%, #D9E9E9 100%)"
   }
 ]
