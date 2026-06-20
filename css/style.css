@@ -42,7 +42,8 @@
   --surface-input: rgba(255, 255, 255, 0.75);
   --text-on-accent: #D9E9E9;
 
-  --font-display: 'Brigadier Extended', sans-serif;
+  --font-display: 'Onest', 'Golos Text', sans-serif;
+  --font-display-accent: 'Brigadier Extended', 'Onest', sans-serif;
   --font-body: 'Golos Text', sans-serif;
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -162,6 +163,8 @@ button, input, textarea {
 }
 
 .nav__logo span {
+  font-family: var(--font-display-accent);
+  font-weight: 700;
   background: linear-gradient(135deg, var(--accent-warm), var(--accent-aqua-dark));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -484,7 +487,9 @@ button, input, textarea {
 }
 
 .hero__subtitle {
+  font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.12rem);
+  font-weight: 400;
   color: var(--text-secondary);
   max-width: 600px;
   margin: 0 auto 1.75rem;
@@ -869,13 +874,30 @@ button, input, textarea {
   object-position: top center;
 }
 
-.case-card__image--banner {
-  aspect-ratio: 21 / 9;
+.case-card__image--banner img,
+.case-card__image--contain img {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.75rem;
+  width: calc(100% - 1.5rem);
+  height: calc(100% - 1.5rem);
+  top: 0.75rem;
+  left: 0.75rem;
 }
 
-.case-card__image--banner img {
-  object-fit: cover;
-  object-position: center;
+.case-card__image--contain,
+.case-card__image--banner {
+  background: rgba(255, 255, 255, 0.42);
+  min-height: 260px;
+}
+
+.case-card--featured .case-card__image--contain {
+  min-height: 300px;
+}
+
+.case-card__image--contain::after,
+.case-card__image--banner::after {
+  background: linear-gradient(to top, rgba(217, 233, 233, 0.15), transparent 50%);
 }
 
 .case-card__image--gradient {
@@ -887,15 +909,11 @@ button, input, textarea {
   background: linear-gradient(to right, transparent 40%, rgba(217, 233, 233, 0.25) 100%);
 }
 
-.case-card__image--banner::after {
-  background: linear-gradient(to top, rgba(217, 233, 233, 0.4), transparent 40%);
-}
-
 .case-card__image::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(217, 233, 233, 0.35), transparent 50%);
+  background: linear-gradient(to top, rgba(217, 233, 233, 0.2), transparent 50%);
   pointer-events: none;
 }
 
@@ -913,7 +931,7 @@ button, input, textarea {
 .case-card__body h3 {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
@@ -939,6 +957,8 @@ button, input, textarea {
   background: rgba(255, 255, 255, 0.45);
   color: var(--text-primary);
   border: 1px solid var(--border-subtle);
+  font-family: var(--font-body);
+  font-weight: 500;
 }
 
 .case-card__link {

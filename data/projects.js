@@ -6,6 +6,7 @@ window.PROJECTS_DATA = [
     tools: ['HTML5', 'CSS3', 'JavaScript'],
     featured: true,
     image: 'data/сайт кондитера.png',
+    imageFit: 'contain',
   },
   {
     id: 'wildberries',
@@ -13,7 +14,8 @@ window.PROJECTS_DATA = [
     description: 'Создание визуально привлекательных карточек товаров для маркетплейса.',
     tools: ['Photoshop', 'Illustrator'],
     featured: false,
-    image: 'data/карточки6.jpg',
+    image: 'data/Урок 4_1.jpg',
+    imageFit: 'contain',
   },
   {
     id: 'vk-community',
@@ -21,7 +23,7 @@ window.PROJECTS_DATA = [
     description: 'Разработка единого визуального стиля сообщества: обложки, баннеры, посты.',
     tools: ['Photoshop', 'Illustrator'],
     featured: false,
-    image: 'data/ОБЛ.jpg',
+    image: 'data/Снимок экрана 2026-06-20 124839.png',
     imageFit: 'contain',
   },
   {
@@ -30,6 +32,7 @@ window.PROJECTS_DATA = [
     description: 'Персональная цифровая страница специалиста с контактами и портфолио.',
     tools: ['HTML5', 'CSS3'],
     featured: false,
-    gradient: 'linear-gradient(135deg, #78B4B7 0%, #D9E9E9 100%)',
+    image: 'data/Снимок экрана 2026-06-20 124139.png',
+    imageFit: 'contain',
   },
 ];

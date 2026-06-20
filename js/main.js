@@ -106,11 +106,13 @@
           .map((t) => `<span class="case-card__tool">${escapeHtml(t)}</span>`)
           .join('');
 
-        const imageClass = [
-          project.featured && project.image ? ' case-card__image--screenshot' : '',
-          project.imageFit === 'contain' ? ' case-card__image--banner' : '',
-          !project.image && project.gradient ? ' case-card__image--gradient' : '',
-        ].join('');
+          const imageClass = [
+            project.featured && project.image && project.imageFit !== 'contain'
+              ? ' case-card__image--screenshot'
+              : '',
+            project.imageFit === 'contain' ? ' case-card__image--contain' : '',
+            !project.image && project.gradient ? ' case-card__image--gradient' : '',
+          ].join('');
 
         const imageContent = project.image
           ? `<img src="${encodePath(project.image)}" alt="${escapeHtml(project.title)}" loading="lazy" width="800" height="500">`
