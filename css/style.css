@@ -1,3 +1,20 @@
+/* ===== Fonts ===== */
+@font-face {
+  font-family: 'Brigadier Extended';
+  src: url('https://fonts.cdnfonts.com/s/41669/BrigadierBlack.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Brigadier Extended';
+  src: url('https://fonts.cdnfonts.com/s/41669/Brigadier.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ===== Design System ===== */
 :root {
   /* Palette */
@@ -25,7 +42,7 @@
   --surface-input: rgba(255, 255, 255, 0.75);
   --text-on-accent: #D9E9E9;
 
-  --font-display: 'Unbounded', sans-serif;
+  --font-display: 'Brigadier Extended', sans-serif;
   --font-body: 'Golos Text', sans-serif;
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -92,7 +109,7 @@ button, input, textarea {
 .section__title {
   font-family: var(--font-display);
   font-size: clamp(1.75rem, 4vw, 2.75rem);
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-primary);
   line-height: 1.2;
   margin-bottom: 1.1rem;
@@ -453,8 +470,9 @@ button, input, textarea {
 
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 5vw, 3.25rem);
+  font-size: clamp(1.75rem, 4.8vw, 3rem);
   font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--text-primary);
   line-height: 1.18;
   letter-spacing: -0.03em;
