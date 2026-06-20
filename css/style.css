@@ -75,6 +75,42 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+main {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    var(--bg-deep) 0%,
+    #d6e8e8 8%,
+    var(--bg-mid) 16%,
+    #d4e6e6 24%,
+    var(--bg-deep) 34%,
+    #d0e4e4 44%,
+    var(--bg-mid) 54%,
+    #d6e8e8 64%,
+    var(--bg-deep) 74%,
+    #d2e5e5 84%,
+    var(--bg-mid) 92%,
+    var(--bg-deep) 100%
+  );
+}
+
+main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 85% 45% at 12% 18%, rgba(120, 180, 183, 0.1) 0%, transparent 55%),
+    radial-gradient(ellipse 75% 40% at 88% 42%, rgba(138, 43, 33, 0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 50% at 50% 78%, rgba(120, 180, 183, 0.08) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main > * {
+  position: relative;
+  z-index: 1;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -105,6 +141,36 @@ button, input, textarea {
 .section {
   padding: clamp(56px, 8vw, 96px) 0;
   position: relative;
+  background: transparent;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(40px, 6vw, 88px);
+  background: linear-gradient(to bottom, rgba(207, 227, 227, 0.28), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(40px, 6vw, 88px);
+  background: linear-gradient(to top, rgba(207, 227, 227, 0.22), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section__title {
@@ -326,7 +392,19 @@ button, input, textarea {
   justify-content: center;
   overflow: hidden;
   padding-top: var(--header-h);
-  background: var(--bg-deep);
+  background: transparent;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: clamp(72px, 14vh, 180px);
+  background: linear-gradient(to bottom, transparent, rgba(207, 227, 227, 0.45));
+  pointer-events: none;
+  z-index: 1;
 }
 
 .hero__backdrop {
@@ -505,7 +583,7 @@ button, input, textarea {
 
 /* ===== About ===== */
 .about {
-  background: linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-mid) 100%);
+  background: transparent;
 }
 
 .about__grid {
@@ -545,7 +623,7 @@ button, input, textarea {
   position: absolute;
   inset: 2px;
   border-radius: inherit;
-  background: var(--bg-mid);
+  background: var(--bg-deep);
 }
 
 @keyframes ringRotate {
@@ -586,7 +664,7 @@ button, input, textarea {
 
 /* ===== Services ===== */
 .services {
-  background: var(--bg-mid);
+  background: transparent;
 }
 
 .services__grid {
@@ -658,7 +736,7 @@ button, input, textarea {
 
 /* ===== Approach (Venn) ===== */
 .approach {
-  background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 100%);
+  background: transparent;
   overflow: hidden;
 }
 
@@ -744,7 +822,7 @@ button, input, textarea {
 
 /* ===== Process ===== */
 .process {
-  background: var(--bg-deep);
+  background: transparent;
 }
 
 .process__steps {
@@ -801,7 +879,7 @@ button, input, textarea {
 
 /* ===== Cases ===== */
 .cases {
-  background: var(--bg-mid);
+  background: transparent;
 }
 
 .cases__grid {
@@ -994,7 +1072,7 @@ button, input, textarea {
 
 /* ===== Tools ===== */
 .tools {
-  background: linear-gradient(180deg, var(--bg-mid) 0%, var(--bg-deep) 100%);
+  background: transparent;
 }
 
 .tools__grid {
@@ -1044,7 +1122,7 @@ button, input, textarea {
 
 /* ===== Contact ===== */
 .contact {
-  background: var(--bg-mid);
+  background: transparent;
 }
 
 .contact__grid {
@@ -1149,8 +1227,19 @@ button, input, textarea {
 /* ===== Footer ===== */
 .footer {
   padding: 2.25rem 0;
-  border-top: 1px solid var(--border-subtle);
-  background: var(--bg-deep);
+  background: transparent;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: clamp(40px, 6vw, 80px);
+  background: linear-gradient(to bottom, rgba(207, 227, 227, 0.25), transparent);
+  pointer-events: none;
 }
 
 .footer__inner {
